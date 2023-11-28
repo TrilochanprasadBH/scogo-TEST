@@ -9,7 +9,7 @@ const Stopwatch = () => {
     <div>
         <p>stopwatch</p>
         <p>{seconds}<span>s</span></p>
-        <button onClick={startOrStop}>{isRunning ? "Stop":"Start"}</button>
+        <button onClick={startOrStop}>{isRunning ? "STOP":"START"}</button>
         <button onClick={reset}>Reset</button>
     </div>
   )

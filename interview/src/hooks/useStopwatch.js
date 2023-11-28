@@ -11,7 +11,7 @@ const useStopwatch = () => {
     },[])
 
     const startOrStop = ()=>{
-            //  console.log("clicked")
+            
         if(!isRunning){
             setIsRunning(true);   
         }else{
@@ -25,13 +25,16 @@ const useStopwatch = () => {
     }
 
     useEffect(()=>{
-          let intervalId;
+        //runs on mount 
+        
+        let intervalId;
         if(isRunning){
             intervalId = setInterval(tick, 1000); 
             document.title = String(seconds).padStart(2,0);
         }
          
         return () => clearInterval(intervalId)
+        //on unmount this clean up 
 
     },[isRunning,tick,seconds])
 
